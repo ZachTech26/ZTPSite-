@@ -44,7 +44,7 @@ const latestPosts = [
             <p class="card-desc">{p.desc}</p>
             <span class="status">
               <span class={`status-dot ${p.status}`}></span>
-              {p.status === 'live' ? 'Live' : p.status === 'progress' ? 'In progress' : 'Planning'}
+              {p.status === 'live' ? 'Live' : p.status === 'progress' ? 'In progress' : p.status === 'queued' ? 'Queued' : 'Planning'}
             </span>
             <div class="tags">
               {p.tags.map((t) => <span class="tag">{t}</span>)}
