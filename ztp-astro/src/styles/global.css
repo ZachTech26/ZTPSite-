@@ -14,6 +14,7 @@
   --status-live: #6fcf97;
   --status-progress: #e8a33d;
   --status-planning: #6b9bd1;
+  --status-queued: #b085d8;
 
   --mono: 'JetBrains Mono', 'Fira Code', monospace;
   --sans: 'Inter', -apple-system, sans-serif;
@@ -282,7 +283,7 @@ hr.rule {
 .status-dot.live { background: var(--status-live); }
 .status-dot.progress { background: var(--status-progress); }
 .status-dot.planning { background: var(--status-planning); }
-
+.status-dot.queued { background: var(--status-queued); }
 .tags {
   display: flex;
   gap: 8px;
