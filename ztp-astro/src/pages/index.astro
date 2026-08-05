@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const featuredProjects = [
+  { title: 'Home Network Segmentation', desc: 'Splitting a flat home network into VLANs for IoT, guest and trusted devices.', status: 'live', tags: ['networking'] },
+  { title: 'Azure Lab Environment', desc: 'A sandbox subscription for practicing Azure administration end to end.', status: 'progress', tags: ['azure', 'cloud'] },
+  { title: 'Photo Media Pipeline', desc: 'An automated workflow for sorting and backing up photos.', status: 'planning', tags: ['automation'] },
+];
+
+const latestPosts = [
+  { title: 'ztp. init', date: '04 Aug 2026', href: '/blog/ztp-init' },
+];
+---
+<Layout title="ZTP. Building, learning and documenting my tech journey." description="Thoughts, stories and ideas from an IT professional documenting his tech journey.">
+  <section class="tight">
+    <div class="wrap">
+      <div class="term-window">
+        <div class="term-titlebar">
+          <span class="term-dot"></span>
+          <span class="term-dot"></span>
+          <span class="term-dot"></span>
+          <span>zach — ztp — 80x24</span>
+        </div>
+        <div class="term-body">
+          <p class="term-dim">$ ztp --status</p>
+          <p class="term-accent">&gt;ztp. Building, learning and documenting my tech journey, one project at a time.</p>
+          <p class="term-dim">$ whoami</p>
+          <p>Zach — IT professional, building up cloud infrastructure, Azure and cybersecurity skills.</p>
+          <p class="term-dim">$ <span class="cursor"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">&gt;ztp. current projects</span>
+      <h2>What I'm building</h2>
+      <hr class="rule" />
+      <div class="grid">
+        {featuredProjects.map((p) => (
+          <a class="card" href="/projects">
+            <div class="card-title">{p.title}</div>
+            <p class="card-desc">{p.desc}</p>
+            <span class="status">
+              <span class={`status-dot ${p.status}`}></span>
+              {p.status === 'live' ? 'Live' : p.status === 'progress' ? 'In progress' : 'Planning'}
+            </span>
+            <div class="tags">
+              {p.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">&gt;ztp. latest writing</span>
+      <h2>From the blog</h2>
+      <hr class="rule" />
+      {latestPosts.map((post) => (
+        <a class="post-row" href={post.href}>
+          <span class="post-title">{post.title}</span>
+          <span class="post-date">{post.date}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

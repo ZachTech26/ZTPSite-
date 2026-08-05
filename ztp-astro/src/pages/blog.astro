@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  { title: 'ztp. init', date: '04 Aug 2026', href: '/blog/ztp-init' },
+];
+---
+<Layout title="Blog — ZTP." description="Thoughts, stories and ideas from ZachsTechPage.">
+  <section class="tight">
+    <div class="wrap">
+      <span class="eyebrow">&gt;ztp. latest writing</span>
+      <h1>Blog</h1>
+      <p class="lede">Notes from labs, experiments and the real process of learning, mistakes included.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      {posts.map((post) => (
+        <a class="post-row" href={post.href}>
+          <span class="post-title">{post.title}</span>
+          <span class="post-date">{post.date}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

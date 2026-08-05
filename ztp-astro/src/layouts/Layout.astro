@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+
+const { title = 'ZTP.', description = 'Thoughts, stories and ideas.' } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+function isActive(path) {
+  if (path === '/') return currentPath === '/';
+  return currentPath.startsWith(path);
+}
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a href="/" class="logo">&gt;<span>ztp</span>.</a>
+        <ul class="nav-links">
+          <li><a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a></li>
+          <li><a href="/projects" aria-current={isActive('/projects') ? 'page' : undefined}>Projects</a></li>
+          <li><a href="/blog" aria-current={isActive('/blog') ? 'page' : undefined}>Blog</a></li>
+          <li><a href="/about" aria-current={isActive('/about') ? 'page' : undefined}>About</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&gt;ztp. building, learning and documenting, one project at a time.</p>
+      </div>
+    </footer>
+  </body>
+</html>
