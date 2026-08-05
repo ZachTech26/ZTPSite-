@@ -242,7 +242,8 @@ hr.rule {
   text-decoration: none;
   color: var(--text);
   transition: border-color 0.15s ease, transform 0.15s ease;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -261,6 +262,7 @@ hr.rule {
   font-size: 0.92rem;
   color: var(--text-dim);
   margin-bottom: 14px;
+  flex-grow: 1;
 }
 
 .status {
