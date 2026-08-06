@@ -19,7 +19,7 @@ export const projects = [
       </ul>
       <p><strong>Hardware</strong></p>
       <ul>
-        <li>HP EliteDesk 800 G5
+        <li>HP ProDesk 600 G3
           <ul>
             <li>Intel Celeron G3930T</li>
             <li>16 GB DDR4 SODIMM RAM</li>
@@ -30,6 +30,16 @@ export const projects = [
         <li>Custom 3D-printed 10-inch rack</li>
       </ul>
 
+      <h3>Cost breakdown</h3>
+      <ul>
+        <li>HP ProDesk 600 G3 — free (would run roughly $100–150 used)</li>
+        <li>CENMATE 2-Bay HDD Enclosure — $60</li>
+        <li>2 × Western Digital Ultrastar DC HA210 (2 TB) — $100 total</li>
+        <li>Filament and parts for the 3D-printed rack — ~$15</li>
+      </ul>
+      <p><strong>Total out of pocket: ~$175</strong></p>
+      <p class="caption">Prices reflect what I paid before the recent RAM/storage price spike — expect to pay more for drives at today's prices.</p>
+
       <h3>Purpose</h3>
       <p>The goal of this project was to build an inexpensive and reliable storage server for my home network. I wanted a place to store important files, backups and shared folders while also gaining hands-on experience with TrueNAS and ZFS. I also wanted a system that I could expand and improve over time.</p>
 
@@ -37,11 +47,11 @@ export const projects = [
       <p><strong>Step 1: Purchasing the hardware</strong></p>
       <p>The first step was gathering all of the hardware. I chose the CENMATE two-bay DAS enclosure because it was simple to set up and supported USB 3.0 speeds. While USB isn't the fastest option for a NAS, it fit my budget and has worked well for my needs.</p>
       <p>For storage, I searched ServerPartDeals for enterprise hard drives and found a pair of Western Digital Ultrastar drives that offered a good balance of reliability, performance and price.</p>
-      <img src="/images/10in-Rack.jpg" alt="Completed HP EliteDesk NAS mounted in a custom 10-inch rack" loading="lazy" />
-      <p class="caption">Figure 1. Completed HP EliteDesk NAS mounted in my custom 10-inch rack.</p>
+      <img src="/images/10in-Rack.jpg" alt="Completed HP ProDesk 600 G3 NAS mounted in a custom 10-inch rack" loading="lazy" />
+      <p class="caption">Figure 1. Completed HP ProDesk 600 G3 NAS mounted in my custom 10-inch rack.</p>
 
       <p><strong>Step 2: Teardown and inspection</strong></p>
-      <p>Since these HP EliteDesk systems were purchased used, I wasn't sure what condition they were in. After removing the top cover, I inspected the system for any obvious damage. Everything looked clean, so I removed the CPU cooler and checked the processor.</p>
+      <p>Since these HP ProDesk 600 G3 systems were purchased used, I wasn't sure what condition they were in. After removing the top cover, I inspected the system for any obvious damage. Everything looked clean, so I removed the CPU cooler and checked the processor.</p>
       <p>The thermal paste had completely dried out, so I cleaned both the CPU and heatsink with isopropyl alcohol before applying fresh thermal paste. While everything was apart, I also cleaned dust from the heatsink and cooling fan.</p>
       <p>After reassembling the system, I powered it on. The internal drive had already been wiped, so the BIOS simply prompted me to install an operating system.</p>
 
@@ -49,7 +59,7 @@ export const projects = [
       <p>I decided to use TrueNAS Community Edition (CE) for this project. I had previously experimented with OpenMediaVault and enjoyed using it, but I wanted something with more enterprise features. TrueNAS offered everything I was looking for, including native ZFS support, snapshots and a polished web interface, all at no cost.</p>
 
       <p><strong>Step 4: Installing TrueNAS</strong></p>
-      <p>I downloaded the latest TrueNAS CE ISO and copied it to my Ventoy bootable USB drive. After booting the HP EliteDesk from the USB drive through the BIOS, the installation process was quick and straightforward. Once installation finished, the system restarted successfully and displayed the IP address for accessing the TrueNAS web interface. From there, the rest of the configuration was completed through the browser.</p>
+      <p>I downloaded the latest TrueNAS CE ISO and copied it to my Ventoy bootable USB drive. After booting the HP ProDesk 600 G3 from the USB drive through the BIOS, the installation process was quick and straightforward. Once installation finished, the system restarted successfully and displayed the IP address for accessing the TrueNAS web interface. From there, the rest of the configuration was completed through the browser.</p>
 
       <p><strong>Step 5: Initial configuration</strong></p>
       <p>Once inside the TrueNAS web interface, I configured the storage pool using the two Ultrastar drives and created the datasets that would store my files.</p>
