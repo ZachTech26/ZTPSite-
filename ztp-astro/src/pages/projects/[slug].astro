@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { projects, statusLabel } from '../../data/projects.js';
+
+export function getStaticPaths() {
+  return projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+---
+<Layout title={`${project.title} — ZTP.`} description={project.desc}>
+  <section class="tight">
+    <div class="wrap" style="max-width: 700px;">
+      <span class="eyebrow">&gt;ztp. project</span>
+      <h1>{project.title}</h1>
+
+      <span class="status" style="margin-bottom: 20px;">
+        <span class={`status-dot ${project.status}`}></span>
+        {statusLabel(project.status)}
+      </span>
+
+      <div class="tags" style="margin-bottom: 28px;">
+        {project.tags.map((t) => <span class="tag">{t}</span>)}
+      </div>
+
+      <div class="post-body" set:html={project.body} />
+
+      {project.images && project.images.length > 0 && (
+        <div class="gallery">
+          {project.images.map((src) => (
+            <img src={src} alt={project.title} loading="lazy" />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
