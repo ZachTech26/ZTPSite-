@@ -60,7 +60,7 @@ export const projects = [
       <h3>Recap</h3>
       <p>This project gave me hands-on experience with TrueNAS, ZFS and SMB sharing, and turned into a storage server I still rely on today.</p>
     `,
-    images: ['/images/10in_Rack.jpg', '/images/TrueNAS_Dashboard.png', '/images/TrueNas_Drives.png'],
+    images: ['/images/10in-Rack.jpg', '/images/TrueNAS-Dashboard.png', '/images/TrueNas-Drives.png'],
   },
   {
     slug: 'home-network-segmentation',
