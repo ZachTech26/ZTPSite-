@@ -1,11 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { projects, statusLabel } from '../data/projects.js';
 
-const featuredProjects = [
-  { title: 'Home Storage Server', desc: 'A home storage server running TrueNAS CE for SMB and Network location shares', status: 'live', tags: ['storage', 'networking'] },
-  { title: 'Azure Lab Environment', desc: 'A sandbox subscription for practicing Azure administration end to end.', status: 'progress', tags: ['azure', 'cloud'] },
-  { title: 'Home Network Segmentation', desc: 'Splitting a flat home network into VLANs for IoT, guest and trusted devices.', status: 'queued', tags: ['networking'] },
-];
+const featuredProjects = projects;
 
 const latestPosts = [
   { title: 'ztp. init', date: '04 Aug 2026', href: '/blog/ztp-init' },
@@ -39,12 +36,12 @@ const latestPosts = [
       <hr class="rule" />
       <div class="grid">
         {featuredProjects.map((p) => (
-          <a class="card" href="/projects">
+          <a class="card" href={`/projects/${p.slug}`}>
             <div class="card-title">{p.title}</div>
             <p class="card-desc">{p.desc}</p>
             <span class="status">
               <span class={`status-dot ${p.status}`}></span>
-              {p.status === 'live' ? 'Live' : p.status === 'progress' ? 'In progress' : p.status === 'queued' ? 'Queued' : 'Planning'}
+              {statusLabel(p.status)}
             </span>
             <div class="tags">
               {p.tags.map((t) => <span class="tag">{t}</span>)}
