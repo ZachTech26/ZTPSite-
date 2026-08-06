@@ -37,13 +37,13 @@ export const projects = [
       <p><strong>Step 1: Purchasing the hardware</strong></p>
       <p>The first step was gathering all of the hardware. I chose the CENMATE two-bay DAS enclosure because it was simple to set up and supported USB 3.0 speeds. While USB isn't the fastest option for a NAS, it fit my budget and has worked well for my needs.</p>
       <p>For storage, I searched ServerPartDeals for enterprise hard drives and found a pair of Western Digital Ultrastar drives that offered a good balance of reliability, performance and price.</p>
+      <img src="/images/10in-Rack.jpg" alt="Completed HP EliteDesk NAS mounted in a custom 10-inch rack" loading="lazy" />
       <p class="caption">Figure 1. Completed HP EliteDesk NAS mounted in my custom 10-inch rack.</p>
 
       <p><strong>Step 2: Teardown and inspection</strong></p>
       <p>Since these HP EliteDesk systems were purchased used, I wasn't sure what condition they were in. After removing the top cover, I inspected the system for any obvious damage. Everything looked clean, so I removed the CPU cooler and checked the processor.</p>
       <p>The thermal paste had completely dried out, so I cleaned both the CPU and heatsink with isopropyl alcohol before applying fresh thermal paste. While everything was apart, I also cleaned dust from the heatsink and cooling fan.</p>
       <p>After reassembling the system, I powered it on. The internal drive had already been wiped, so the BIOS simply prompted me to install an operating system.</p>
-      <p class="caption">Figure 2. Replacing the dried thermal paste during the rebuild.</p>
 
       <p><strong>Step 3: Choosing an operating system</strong></p>
       <p>I decided to use TrueNAS Community Edition (CE) for this project. I had previously experimented with OpenMediaVault and enjoyed using it, but I wanted something with more enterprise features. TrueNAS offered everything I was looking for, including native ZFS support, snapshots and a polished web interface, all at no cost.</p>
@@ -53,14 +53,16 @@ export const projects = [
 
       <p><strong>Step 5: Initial configuration</strong></p>
       <p>Once inside the TrueNAS web interface, I configured the storage pool using the two Ultrastar drives and created the datasets that would store my files.</p>
-      <p class="caption">Figure 3. TrueNAS dashboard setup.</p>
-      <p class="caption">Figure 4. TrueNAS web interface showing the configured storage pool.</p>
+      <img src="/images/TrueNAS-Dashboard.png" alt="TrueNAS dashboard setup" loading="lazy" />
+      <p class="caption">Figure 2. TrueNAS dashboard setup.</p>
+      <img src="/images/TrueNas-Drives.png" alt="TrueNAS storage pool with configured drives" loading="lazy" />
+      <p class="caption">Figure 3. TrueNAS web interface showing the configured storage pool.</p>
       <p>I also enabled SMB sharing so my Windows devices could easily access the server over my home network. After testing file transfers between multiple devices, everything worked exactly as expected.</p>
 
       <h3>Recap</h3>
       <p>This project gave me hands-on experience with TrueNAS, ZFS and SMB sharing, and turned into a storage server I still rely on today.</p>
     `,
-    images: ['/images/10in-Rack.jpg', '/images/TrueNAS-Dashboard.png', '/images/TrueNas-Drives.png'],
+    images: [],
   },
   {
     slug: 'home-network-segmentation',
